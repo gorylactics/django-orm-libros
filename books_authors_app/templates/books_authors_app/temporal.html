@@ -1,0 +1,23 @@
+<div>
+    <select name="opcion" id="">
+        {%for libros in autor.books.all %}
+        <option value="{{libros.id}}">{{libros.first_name}}</option>
+        {%endfor%}
+    </select>
+    <button type="submit">enviar</button>
+</div>
+
+
+<div>
+    {{autores.first_name}} {{autores.last_name}}
+    <br>
+    {{autores.id}}
+    <br>
+    {{autores.notas}}
+    <br>
+    <h1>libros del autor</h1>
+    {%for libros in autor.books.all %}
+        {{libros.title}}
+        <br>
+    {%endfor%}
+</div>

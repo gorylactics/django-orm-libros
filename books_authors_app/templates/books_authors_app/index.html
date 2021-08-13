@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/miGrilla.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col md-12 lg-12 xl-12 xxl-12 principal">
+                <div class="izquierda md-6 lg-6 xl-6 xxl-6">
+                    <form action="/procesarLibro" method="POST" class="contenidoForm">
+                        {% csrf_token %}
+                        <h1>Add Book</h1>
+                        <div>
+                            <label for="title">title</label>
+                            <input type="text" name="title" id="">
+                        </div>
+                        <div>
+                            <label for="description">description</label>
+                            <input type="text" name="description" id="">
+                        </div>
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+                <div class="derecha md-6 lg-6 xl-6 xxl-6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for l in libros%}
+                            <tr>
+                                <td>{{l.id}}</td>
+                                <td>{{l.desc}}</td>
+                                <td><a href="book/{{l.id}}">ir al contenido</a></td>
+                            </tr>
+                            {% endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

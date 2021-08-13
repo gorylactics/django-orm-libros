@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/miGrilla.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col md-12 lg-12 xl-12 xxl-12">
+                <div class="row">
+                    <div class="col lg-6 xl-6 xxl-6">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <h1>Agregar un Autor</h1>
+                            <div>
+                                <label for="first_name">Nombre:</label>
+                                <input type="text" name="first_name" id="">
+                            </div>
+                            <div>
+                                <label for="last_name">Apellido:</label>
+                                <input type="text" name="last_name" id="">
+                            </div>
+                            <div>
+                                <label for="notas">Notas:</label>
+                                <input type="text" name="notas" id="">
+                            </div>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="col lg-6 xl-6 xxl-6">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre y apellido</th>
+                                    <th>Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for a in autores %}
+                                <tr>
+                                    <td>{{a.id}}</td>
+                                    <td>{{a.first_name}} {{a.last_name}}</td>
+                                    <td><a href="author/{{a.id}}">accion</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
