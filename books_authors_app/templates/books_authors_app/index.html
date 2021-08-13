@@ -10,44 +10,59 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container__fluid">
+        <div class="row">
+            <div class="col md-12 lg-12 xl-12 xxl-12 futura_navbar"></div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col md-12 lg-12 xl-12 xxl-12 principal">
                 <div class="izquierda md-6 lg-6 xl-6 xxl-6">
                     <form action="/procesarLibro" method="POST" class="contenidoForm">
                         {% csrf_token %}
-                        <h1>Add Book</h1>
-                        <div>
-                            <label for="title">title</label>
-                            <input type="text" name="title" id="">
-                        </div>
-                        <div>
-                            <label for="description">description</label>
-                            <input type="text" name="description" id="">
-                        </div>
-                        <button type="submit">Add</button>
+                        <h1 class="titulo">Add Book</h1>
+                        <label class="campos" for="title"><p>Title:</p></label class="campos">
+                        <input type="text"  class="inputs" name="title" id=" class="inputs">
+                        <br>
+                        <label class="campos" for="description"><p>Description:</p></label>
+                        <input type="text"  class="inputs inputDesc" name="description" id="">
+                        <br>
+                        <button type="submit"><p class="boton">Add</p></button>
                     </form>
                 </div>
                 <div class="derecha md-6 lg-6 xl-6 xxl-6">
                     <table>
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Action</th>
+                                <th><p>ID</p></th>
+                                <th><p>Title</p></th>
+                                <th><p>Description</p></th>
+                                <th><p>Action</p></th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for l in libros%}
                             <tr>
-                                <td>{{l.id}}</td>
-                                <td>{{l.desc}}</td>
-                                <td><a href="book/{{l.id}}">ir al contenido</a></td>
+                                <td><p>{{l.id}}</p></td>
+                                <td><p>{{l.title}}</p></td>
+                                <td><p>{{l.desc}}</p></td>
+                                <td><p><a href="book/{{l.id}}" class="ver">View</a></p></td>
                             </tr>
                             {% endfor%}
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container__fluid">
+        <div class="row">
+            <div class="col md-12 lg-12 xl-12 xxl-12 futuro_footer">
+                <ul>
+                    <li><p class="footer"><a href="/" class="footer">Book´s</a></p></li>
+                    <li><p class="footer"><a href="authors" class="footer">Author´s</a></p></li>
+                </ul>
             </div>
         </div>
     </div>

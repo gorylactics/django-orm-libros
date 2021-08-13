@@ -1,8 +1,90 @@
 body{
     background-color: purple;
+
+}
+h1{
+	font-size: 90px;
+}
+p{
+	margin: 0 0 0 35px;
+	font-size: 23px;
+	display: inline-block;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.futura_navbar{
+	height: 10vh;
+	background-color: black;
+}
+
+.campos{
+	margin-right: 40px;
+}
+.campos p{
+	font-size: 50px;
+}
+
+.inputs{
+	font-size: 2rem;
+	height: 8vh;
+	width: 20vw;
+	border-radius: 15px 15px 15px 15px ;
+	background-color: black;
+	color: darkmagenta;
+}
+
+button{
+	margin:50px 30% 0 30%;
+	border-radius: 15px 15px 15px 15px ;
+	background-color: darkviolet;
+	width: 30%;
+	height: 8vh;
+}
+
+.boton{
+	font-size: 2.8rem;
+	margin: 0 0 0 0px;
 }
 
 .principal{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: baseline;
+	align-content: stretch;
+	margin-top: 80px;
+}
+
+
+.derecha{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: baseline;
+	align-content: stretch;
+}
+
+.ver{
+	color: rgb(19, 179, 118);
+}
+.futuro_footer{
+	height: 10vh;
+	background-color: black;
+	margin-top: 52px;
+	
+}
+
+.footer{
+	font-size: 33px;
+	color: whitesmoke;
+	margin-top: -15px;
+}
+/* .principal{
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -11,6 +93,7 @@ body{
 	align-content: stretch;
 }
 
+
 .contenidoForm{
     display: flex;
 	flex-direction: column;
@@ -18,9 +101,23 @@ body{
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
-    background-color: whitesmoke;
+
 }
 
-.derecha{
-    background-color: aquamarine;
+.titulo{
+
+	text-align: center;
+	font-size: 9rem;
 }
+
+th , td{
+	font-size: 1.5rem;
+}
+
+
+.izquierda{
+	width: 48vw;
+}
+.derecha{
+    /* background-color: aquamarine; */
+	
